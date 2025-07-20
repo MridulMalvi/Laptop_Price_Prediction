@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import joblib
 import pickle
 
 # Load the pre-trained model
 df = pickle.load(open('df.pkl', 'rb'))
-pipe = pickle.load(open('pipe.pkl', 'rb'))
+pipe = joblib.load('pipe.pkl')
 
 st.title("Laptop Price Predictor")
 
@@ -37,8 +38,8 @@ if st.button("Predict Price"):
     else: 
         Ips = 0
         
-        X_res= int(Resolution.split('x')['0'])
-        Y_res = int(Resolution.split('x')['1'])
+        X_res = int(Resolution.split('x')[0])
+        Y_res = int(Resolution.split('x')[1])
         ppi= ((int(X_res)**2 + int(Y_res)**2)**0.5)/ScreenSize
         
     query = np.array([Company,TypeName,Ram,Weight,Touchscreen,Ips,PPI,Cpu,Hdd,dd,Gpu,Os])
