@@ -35,7 +35,12 @@ This is a **Machine Learning project** that predicts the price of a laptop based
 
 ---
 
-## 📊 Dataset Features  
+
+## 📊 Dataset  
+
+- **Source:** Kaggle Laptop Price Dataset
+- **Size:** ~1,300 laptops with different specifications and prices. 
+
 | Feature       | Description |
 |--------------|-------------|
 | Company      | Laptop manufacturer brand |
